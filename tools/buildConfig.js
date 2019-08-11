@@ -24,7 +24,7 @@ module.exports = () => {
     routes: [],
   };
   let root = findRootDirectory();
-  readDirectory(root)
+  readDirectory(root, 'node_modules')
     .filter(path => (path.endsWith('koji.json') || path.includes('.koji')) && !path.includes('.koji-resources'))
     .forEach((path) => {
       try {
