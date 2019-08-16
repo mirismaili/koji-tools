@@ -4,7 +4,12 @@
   "description": "A library that simplifies adding koji-specific features to any javascript project",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test:unit": "jest --verbose --colors --config jest/unit/config.js",
+    "test:unit:watch": "npm run test:unit -- --watch",
+    "pretest:unit:coverage": "rimraf coverage/unit",
+    "test:unit:coverage": "npm run test:unit -- --coverage",
+    "test:unit:coverage:watch": "npm run test:unit:coverage -- --watch",
+    "test:unit:prod": "npm run test:unit:coverage -- --no-cache",
     "postinstall": "node ./cmd.js postinstall"
   },
   "repository": {
