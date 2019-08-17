@@ -43,7 +43,7 @@ for (const [testProjectName, testProject] of Object.entries(testProjects)) {
     it(`Check the output list`, async () => {
       expect(
           readDirectory(testProject.localPath).map(
-              // Make paths relative and cross-platform:
+              // Make paths relative:
               absPath => path.relative(testProject.localPath, absPath)
           ).sort())
           .toEqual((await readDirectoryRelative(testProject.localPath)).sort())
@@ -110,8 +110,7 @@ async function cloneGitRepo(testProjectGitUrl, testProjectPath, tagOrBranchName)
     gitSubProcess.on('close', code => {
       const message = `Git sub-process exited with code ${code}`
       if (code !== 0) reject(message)
-      
-      
+		 
       console.log(message)
       resolve()
     })
