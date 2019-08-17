@@ -13,5 +13,11 @@ module.exports = {
       lines: 95,
       statements: 95,
     },
+    './tools/readDirectory.js': {
+      branches: 50,
+      functions: 95,
+      lines: 75,
+      statements: 70,
+    },
   },
 }
